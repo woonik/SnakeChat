@@ -4,29 +4,48 @@ import android.util.Log;
 
 public class snakechatandriod {
 
-	int displayWidth, displayHeight, precision;
+	int displayWidth;
+	int displayHeight;
+	int finalxy;
+	int precision;
+
 
 	public snakechatandriod(int w, int h, int p) {
 		displayWidth = w;
 		displayHeight = h;
 		precision = p;
+		
 	}
 
-	public int GetRandPositionX() {
+	public int randomx() {
 		int x = (int) (Math.random() * (displayWidth-50));
-		x += precision - (x % precision);
-		if (x > displayWidth)
-			x = displayWidth / 2;
-		Log.v("Random","x="+x);
+		int z = (int) (Math.random() * (displayWidth-50));
+		
+		x = x + precision - (x % precision);
+		if (x > displayWidth){
+			int finalx = displayWidth;
+			x = finalx/2;
+		}
+		for(int index = 0; index < z; index++){
+			z += z;
+		}
+		Log.v("xrand","x="+x);
 		return x;
 	}
 
-	public int GetRandPositionY() {
+	public int randomy() {
 		int y = (int) (Math.random() * (displayHeight-50));
+		int k = (int) (Math.random() * (displayHeight-50));
+		
 		y += precision - (y % precision);
-		if (y > displayHeight)
-			y = displayHeight / 2;
-		Log.v("Random","y="+y);
+		if (y > displayHeight){
+			int finaly = displayHeight;
+			y = finaly/2;
+		}
+		for(int index = 0; index < k; index++){
+			k += k;
+		}
+		Log.v("yrand","y="+y);
 		return y;
 	}
 }

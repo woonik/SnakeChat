@@ -1,8 +1,13 @@
 package com.example.snakechat;
 
 public class snakechataxis {
-	int x_axis, y_axis;
-	int xindex, yindex;
+	int x_axis;
+	int y_axis;
+	int xindex;
+	int axisony;
+	int axisonx;
+	int yindex;
+
 	
 	public snakechataxis(int x, int y){
 		x_axis = x;
